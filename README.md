@@ -1,2 +1,2 @@
-# github.io
+# galievranis.github.io
 Personal Website
