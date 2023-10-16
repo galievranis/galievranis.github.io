@@ -1,2 +1,2 @@
-# galievranis.github.io
-Personal Website
+# About
+Repository for personal website galievranisque.github.io
