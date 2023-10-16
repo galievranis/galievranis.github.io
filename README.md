@@ -1,2 +1,2 @@
 # About
-Repository for personal website [galievranisque.github.io](https://galievranisque.github.com)
+Repository for personal website [galievranisque.github.io](https://galievranisque.github.io)
