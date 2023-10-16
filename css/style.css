@@ -1,3 +1,23 @@
-* {
+body {
+    height: 100vh;
+    margin: 0;
+    padding: 12px;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #F0F0F0;
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: white;
+    border-radius: 32px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
 }
