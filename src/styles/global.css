@@ -1,0 +1,52 @@
+html {
+    background-color: #fff;
+    font-family: 'Onest', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    text-transform: lowercase;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1060px;
+    padding: 0px 16px;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+    color: #06080D;
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.scroll-mt {
+    scroll-margin-top: 80px;
+}
+
+.container {
+    padding: 0px 32px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        padding: 0px 8px;
+    }
+
+    .container {
+        padding: 0px 16px;
+    }
+}
+
+.title-secondary {
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -4%;
+    width: 300px;
+}

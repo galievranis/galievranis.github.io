@@ -1,0 +1,27 @@
+---
+const skills = ["Product Approach", "User Research", "UI/UX", "Web Design", "Graphic Design", "Adobe", "Figma", "Tilda", "No code development", "Motion Design", "HTML", "CSS", "Spline", "Blender", "Java"];
+---
+
+<div class="container">
+    <ul>
+        {skills.map((skill) => <li>{skill}</li>)}
+    </ul>
+</div>
+
+<style>
+    ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        /* margin-bottom: 24px; */
+        margin-bottom: 1000px;
+    }
+
+    li {
+        padding: 10px 12px;
+        line-height: 1;
+        border: solid 1px #000;
+        border-radius: 100px;
+        white-space: nowrap;
+    }
+</style>
