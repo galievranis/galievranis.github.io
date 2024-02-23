@@ -1,0 +1,50 @@
+---
+import ContactLink from "./ContactLink.astro"
+---
+
+<section id="contact">
+    <div class="container">
+        <h2>
+            Contact
+        </h2>
+    
+        <ul>
+            <li>
+                <ContactLink link="https://www.apple.com" title="Telegram" className="tg"/>
+            </li>
+            <li>
+                <ContactLink link="apple.com" title="Gmail" className="gmail"/>
+            </li>
+            <li>
+                <ContactLink link="apple.com" title="Behance" className="be"/>
+            </li>
+            <li>
+                <ContactLink link="apple.com" title="Dribbble" className="dribbble"/>
+            </li>
+            <li>
+                <ContactLink link="apple.com" title="read.cv" className="read-cv"/>
+            </li>
+            <li>
+                <ContactLink link="apple.com" title="Downlaod CV"/>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<style>
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+    }
+
+    li:not(:first-child) {
+        padding-top: 16px;
+    }
+
+    li:not(:last-child) {
+        border-bottom: solid 1px rgba(3, 6, 8, 0.1);
+        padding-bottom: 16px;
+    }
+</style>

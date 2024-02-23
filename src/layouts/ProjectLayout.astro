@@ -1,0 +1,139 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+
+import '../styles/global.css';
+import '../styles/project.css';
+
+const { entryTitle } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<BaseHead title=`${entryTitle}  • `/>
+    <body>  
+        <div>
+            <aside>
+                <a href="/">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 20.1094C5 19.6198 5.1875 19.1927 5.5625 18.8281L15.8438 8.5625C16.0312 8.375 16.2292 8.23438 16.4375 8.14062C16.6458 8.04688 16.8646 8 17.0938 8C17.5729 8 17.974 8.15625 18.2969 8.46875C18.6198 8.78125 18.7812 9.17188 18.7812 9.64062C18.7812 9.89062 18.7344 10.1198 18.6406 10.3281C18.5469 10.526 18.4219 10.7031 18.2656 10.8594L10.419 18.3906H32.7969C33.3177 18.3906 33.7344 18.5521 34.0469 18.875C34.3698 19.1875 34.5312 19.599 34.5312 20.1094C34.5312 20.6094 34.3698 21.0208 34.0469 21.3438C33.7344 21.6562 33.3177 21.8125 32.7969 21.8125H10.3892L18.2656 29.3438C18.4219 29.5 18.5469 29.6823 18.6406 29.8906C18.7344 30.099 18.7812 30.3229 18.7812 30.5625C18.7812 31.0312 18.6198 31.4219 18.2969 31.7344C17.974 32.0469 17.5729 32.2031 17.0938 32.2031C16.6354 32.2031 16.224 32.026 15.8594 31.6719L5.5625 21.3906C5.1875 21.026 5 20.599 5 20.1094Z" fill="#030608"/>
+                    </svg> 
+                    <span>
+                        ← Back to mainpage
+                    </span>
+                </a>
+            </aside>
+            <main>
+                <article>
+                    <slot />
+                </article>
+                <Footer />
+            </main>
+        </div>  
+    </body>
+</html>
+
+<style lang="scss">
+    div {
+        display: flex;
+        flex-direction: row;
+    }
+
+    main {
+        flex-direction: column;
+        margin: 0 auto;
+    }
+
+    article {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    a {
+        display: flex;
+        background-color: #E6E6E6;
+        align-items: center;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 1000px;
+        position: sticky;
+        top: 24px;
+        left: 0;
+        width: 56px;
+        height: 56px;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.2s ease;
+
+        svg {
+            width: 24px;
+
+            path {
+                transition: all 0.2s ease;
+            }
+        }
+
+        span {
+            display: none;
+        }
+
+        &:hover {
+            background-color: #145EEE;
+
+            svg path {
+                fill: #FFFFFF;
+            }
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        div {
+            width: 100%;
+            margin: 0;
+            max-width: none;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        main {
+            margin: 0;
+            margin-bottom: 72px;
+        }
+
+        aside {
+            display: flex;
+            position: fixed;
+            bottom: 16px;
+            z-index: 1000;
+            width: calc(100% - 32px);
+            justify-content: center;
+        }
+
+        article {
+            max-width: 100%;
+        }
+
+        a {
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 32px 0px rgba(0, 0, 0, 0.05);
+            width: fit-content;
+            padding: 0px 24px;
+
+            &:hover {
+                background-color: #FFFFFF;
+                color:#030608;
+            }
+
+            span {
+                display: inline-block;
+                color: #030608;
+                font-size: 14px;
+                font-weight: 600;
+            }
+        }
+
+        svg {
+            display: none;
+        }
+    }
+</style>

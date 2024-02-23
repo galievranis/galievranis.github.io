@@ -1,0 +1,35 @@
+---
+const { link, title } = Astro.props;
+---
+
+<a href=`${link}` target="_blank">{title}</a>
+
+<style lang="scss">
+    a {
+        text-decoration: none;
+        font-size: 18px;
+        line-height: 1.4;
+        font-weight: 600;
+        position: relative;
+        transition: all 0.2s ease;
+
+        &::before {
+            content: '→';
+            opacity: 0;
+            position: absolute;
+            left: -16px;
+            transition: left 0.2s ease, opacity 0.2s ease;
+        }
+
+        &:hover {
+            padding-left: 20px;
+            transition: all 0.2s ease;
+                
+                &::before {
+                    left: 0px;
+                    opacity: 1;
+                    transition: left 0.2s ease, opacity 0.2s ease;
+                }
+        }
+    }
+</style>

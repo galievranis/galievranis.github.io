@@ -1,52 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
 html {
-    background-color: #fff;
-    font-family: 'Onest', sans-serif;
-    font-size: 16px;
-    line-height: 1.4;
-    text-transform: lowercase;
     scroll-behavior: smooth;
 }
 
 body {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1060px;
-    padding: 0px 16px;
+    margin: 24px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #030608;
+    background-color: #F2F2F2;
+    font-size: 14px;
     line-height: 1.5;
 }
 
 a {
     text-decoration: none;
-    color: #06080D;
+    color: inherit;
+    display: inline-block;
+    transition: color 0.2s ease;
+    line-height: 1.4;
+    z-index: 1;
 }
 
-* {
-    box-sizing: border-box;
-    transition: all 0.3s ease;
+a:hover {
+    color: #145EEE;
+    transition: color 0.2s ease;
 }
 
-.scroll-mt {
-    scroll-margin-top: 80px;
+:target {
+    scroll-margin-block: 56px;
 }
 
-.container {
-    padding: 0px 32px;
+::-moz-selection {
+    color: #FFFFFF;
+    background: #145EEE;
 }
 
-@media screen and (max-width: 768px) {
+::selection {
+    color: #FFFFFF;
+    background: #145EEE;
+}
+
+@media screen and (max-width: 991px) {
     body {
-        padding: 0px 8px;
+        margin: 16px;
     }
-
-    .container {
-        padding: 0px 16px;
-    }
-}
-
-.title-secondary {
-    font-size: 40px;
-    font-weight: 500;
-    line-height: 1.1;
-    letter-spacing: -4%;
-    width: 300px;
 }

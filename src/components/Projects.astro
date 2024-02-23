@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+
+const allPublishedProjects = await getCollection('projects', ({ data }) => {
+    return data.draft !== true;
+});
+---
+
+<section id="projects">
+    <div class="container">
+        <h2>
+            Latest projects
+        </h2>
+        
+        <ul>
+            {allPublishedProjects.map(project => (
+                <li>
+                    <a href={project.slug}>{project.data.title}</a>
+                </li>
+            ))}
+        </ul>
+    </div>
+</section>
+
+<style lang="scss">
+    h2 {
+        margin-bottom: 32px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 0;
+    }
+
+    li:not(:first-child) {
+        padding-top: 16px;
+    }
+
+    li:not(:last-child) {
+        border-bottom: solid 1px rgba(3, 6, 8, 0.1);
+        padding-bottom: 16px;
+    }
+
+    a {
+        font-size: 18px;
+        font-weight: 600;
+        position: relative;
+        transition: all 0.2s ease;
+
+        &::before {
+            content: '→';
+            opacity: 0;
+            position: absolute;
+            left: -16px;
+            transition: left 0.2s ease, opacity 0.2s ease;
+        }
+
+        &:hover {
+        padding-left: 20px;
+        transition: all 0.2s ease;
+            
+            &::before {
+                left: 0px;
+                opacity: 1;
+                transition: left 0.2s ease, opacity 0.2s ease;
+            }
+        }
+    }
+</style>

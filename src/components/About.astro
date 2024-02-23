@@ -1,27 +1,105 @@
 ---
-const skills = ["Product Approach", "User Research", "UI/UX", "Web Design", "Graphic Design", "Adobe", "Figma", "Tilda", "No code development", "Motion Design", "HTML", "CSS", "Spline", "Blender", "Java"];
+import { SKILLS } from '../const';
 ---
 
-<div class="container">
-    <ul>
-        {skills.map((skill) => <li>{skill}</li>)}
-    </ul>
-</div>
+<section id="about">
+    <div class="container">
+        <h2>
+            About me
+        </h2>
+        <div class="skills">
+            <ul>
+                {SKILLS.map((skill) => 
+                    <li>{skill}</li>
+                )}
+            </ul>
+        </div>
+        <p>
+            I focus on making the product not just beautiful, but also user-friendly, and address the needs of business. My goal is to bring new ideas to design and to be the one to inspire others to create innovative and functional products.
+        </p>
+        <p>
+            During all my time as a designer I mastered the basic tools of the designer, as well as a little immersed in the development, learning HTML, CSS, Java.
+        </p>
+    
+        <div class="work-expirience">
+            <h3>
+                Work expirience:
+            </h3>
+        
+            <ul>
+                <li>
+                    <h4>
+                        2021 – present
+                    </h4>
+                    <p>
+                        I am a Product Designer at KAKSVOIM, a company that specializes in balcony renovation and design. I am responsible for all aspects of design, from the brand identity to the company's internal services. I assembled a team with which we launched the MVP of the service in a very tight timeframe.
+                    </p>
+                </li>
+                <li>
+                    <h4>
+                        2016 – 2021
+                    </h4>
+                    <p>
+                        Designer at the marketing agency "Direkt". Did alot of graphic designs, also made website designs and conducted research. Worked with such companies as TNV (TV Channel), Kazan Airport, FC Kamaz & FC Rubin.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</section>
 
-<style>
-    ul {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        /* margin-bottom: 24px; */
-        margin-bottom: 1000px;
+<style lang="scss">
+    h3 {
+        margin-top: 40px;
+        margin-bottom: 20px;
     }
 
-    li {
-        padding: 10px 12px;
-        line-height: 1;
-        border: solid 1px #000;
-        border-radius: 100px;
-        white-space: nowrap;
+    p {
+        margin-bottom: 24px;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    .work-expirience {
+        margin-bottom: 32px;
+
+        h3 {
+            margin-bottom: 24px;;
+        }
+
+        h4 {
+            margin-bottom: 12px;
+        }
+
+        li:not(:last-child) {
+            border-bottom: solid 1px rgba(3, 6, 8, 0.1);
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+    }
+
+    .skills {
+        ul {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 4px;
+            margin-bottom: 28px;
+            max-width: 700px;
+        }
+        
+        li {
+            padding: 10px 12px;
+            line-height: 1;
+            border-radius: 100px;
+            white-space: nowrap;
+            background-color: #E6E6E6;
+        }
     }
 </style>
